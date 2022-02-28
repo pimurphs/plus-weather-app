@@ -10,61 +10,83 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/9683c7ba5e.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="src/style.css" />
     <title>Document</title>
   </head>
   <body>
-    <div class="container searchbar-group">
-      <div class="row">
-        <div class="col-6">
-          <form id="search-bar">
-            <div class="form-group">
-              <input
-                class="searchbar"
-                type="search"
-                placeholder="Search by City"
-                autocomplete="off"
-                id="city-input"
-              />
+    <div class="container weather-app">
+      <div class="container search-bar d-flex justify-content-center">
+        <div class="row search-container">
+          <div class="col-1">
+            <div class="current-button" id="current-location-button">
+              <button type="button" class="btn btn-light">📍</button>
             </div>
-          </form>
-        </div>
-        <div class="col-6">
-          <div class="current-button" id="current-location-button">
-            <button type="button" class="btn btn-light">📍</button>
+          </div>
+          <div class="col-11">
+            <div class="enter-city-bar">
+              <form id="search-bar">
+                <div class="form-group">
+                  <input
+                    class="searchbar"
+                    type="search"
+                    placeholder="Search by City"
+                    autocomplete="off"
+                    id="city-input"
+                  />
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="row">
-          <div class="col-3">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-12">
             <span class="current-time" id="date-time"
               >Tuesday 12 March 10.45</span
             >
           </div>
-          <div class="col-3">Faro</div>
-          <div class="col-3">WEATHER ICON 🌞</div>
+          <div class="col-6">
+            <h1 class="city-name">Cracóvia</h1>
+          </div>
+          <div class="col-6 icon">
+            <i class="fas fa-sun"></i>
+          </div>
         </div>
         <div class="row">
-          <div class="col-12">28 ºC| ºF</div>
+          <div class="col-12 current-temp">
+            28
+            <span class="temp-unit">
+              <a href="#" id="celsius">ºC</a> |
+              <a href="#" id="fahrenheit">ºF</a>
+            </span>
+          </div>
           <div class="col-12">Clear Sky</div>
           <div class="col-12">Humidity: 10%</div>
           <div class="col-12">Wind Speed: 5 km/h</div>
         </div>
       </div>
+      <footer>
+        <p class="footer">
+          <a
+            href="https://github.com/pimurphs/pimurphs-weather-app"
+            target="_blank"
+            >Open-source code</a
+          >
+          by Filipa Rodrigues
+        </p>
+      </footer>
     </div>
-    <footer>
-      <p class="footer">
-        <a
-          href="https://github.com/pimurphs/pimurphs-weather-app"
-          target="_blank"
-          >Open-source code</a
-        >
-        by Filipa Rodrigues
-      </p>
-    </footer>
     <script src="src/app.js"></script>
   </body>
 </html>
