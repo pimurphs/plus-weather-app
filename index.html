@@ -12,8 +12,10 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <script
@@ -29,7 +31,9 @@
         <div class="row search-container">
           <div class="col-1">
             <div class="current-button" id="current-location-button">
-              <button type="button" class="btn btn-light">📍</button>
+              <button type="button" class="btn btn icon-location">
+                <i class="fas fa-solid fa-location-arrow icon-location"></i>
+              </button>
             </div>
           </div>
           <div class="col-11">
@@ -49,44 +53,45 @@
           </div>
         </div>
       </div>
-      <div class="container">
+      <div class="container current-weather-container">
         <div class="row d-flex justify-content-center">
           <div class="col-12">
             <span class="current-time" id="date-time"
               >Tuesday 12 March 10.45</span
             >
           </div>
-          <div class="col-6">
-            <h1 class="city-name">Cracóvia</h1>
+          <div class="col-8">
+            <h1 class="city-name">Lisboa</h1>
           </div>
-          <div class="col-6 icon">
-            <i class="fas fa-sun"></i>
+          <div class="col-4">
+            <i class="fas fa-light fa-sun icon-weather"></i>
           </div>
         </div>
         <div class="row">
           <div class="col-12 current-temp">
             28
             <span class="temp-unit">
-              <a href="#" id="celsius">ºC</a> |
-              <a href="#" id="fahrenheit">ºF</a>
+              <a href="#" id="celsius" class="temp-unit">ºC</a> |
+              <a href="#" id="fahrenheit" class="temp-unit">ºF</a>
             </span>
           </div>
-          <div class="col-12">Clear Sky</div>
-          <div class="col-12">Humidity: 10%</div>
-          <div class="col-12">Wind Speed: 5 km/h</div>
+          <div class="col-12 extra-data-temp">Humidity: 10%</div>
+          <div class="col-12 extra-data-temp">Wind Speed: 5 km/h</div>
+          <div class="col-12 extra-data-temp">Clear Sky</div>
         </div>
       </div>
-      <footer>
-        <p class="footer">
-          <a
-            href="https://github.com/pimurphs/pimurphs-weather-app"
-            target="_blank"
-            >Open-source code</a
-          >
-          by Filipa Rodrigues
-        </p>
-      </footer>
     </div>
+    <footer>
+      <p class="footer">
+        <a
+          class="source-link"
+          href="https://github.com/pimurphs/plus-weather-app"
+          target="_blank"
+          >Open-source code</a
+        >
+        by Filipa Rodrigues
+      </p>
+    </footer>
     <script src="src/app.js"></script>
   </body>
 </html>

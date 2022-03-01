@@ -1,3 +1,12 @@
+body {
+  background: linear-gradient(
+    26deg,
+    rgb(115, 235, 252) 0%,
+    rgb(243, 248, 179) 88%
+  );
+  background-attachment: fixed;
+}
+
 .weather-app {
   font-family: "Roboto Mono", monospace;
   margin: 0 auto;
@@ -5,40 +14,83 @@
   max-width: fit-content;
 }
 
+.current-weather-container {
+  border-radius: 7px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
 .search-container {
   margin-bottom: 20px;
 }
 
 .searchbar {
+  border-radius: 3px;
+  font-size: 12px;
+  background: none;
   width: 400px;
   justify-content: center;
   text-align: center;
 }
 
-.current-button {
-  float: right;
+.icon-location {
+  position: relative;
+  bottom: 5px;
+  right: 5px;
+  background: none;
+  font-size: 20px;
 }
+
 .city-name {
   float: right;
-  font-size: 60px;
-  font-family: "Bungee Shade", cursive;
+  font-size: 50px;
+  font-family: "Major Mono Display", monospace;
 }
 
 .current-time {
+  font-size: 13px;
+  position: relative;
+  bottom: 15px;
   display: block;
   margin: 0 0 20px auto;
   text-align: center;
 }
+
+.icon-weather {
+  font-size: 60px;
+  font-weight: 100;
+}
+
 .current-temp {
-  position: relative;
-  right: 180px;
   font-size: 50px;
   text-align: right;
-  font-family: "Bungee Shade", cursive;
+  font-family: "Major Mono Display", monospace;
 }
 
 .temp-unit {
+  color: #000;
   text-decoration: none;
   font-size: 15px;
   font-family: "Roboto Mono", monospace;
+  transition: all 200ms ease-in-out;
+}
+
+.extra-data-temp {
+  font-size: 13px;
+  text-align: right;
+}
+
+.footer {
+  font-size: 13px;
+  font-family: "Roboto Mono", monospace;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+.source-link {
+  color: #000;
+}
+
+.source-link:hover {
+  color: rgb(243, 248, 179);
 }
