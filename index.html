@@ -22,6 +22,7 @@
       src="https://kit.fontawesome.com/9683c7ba5e.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
     <title>Document</title>
   </head>
@@ -61,7 +62,7 @@
             >
           </div>
           <div class="col-8">
-            <h1 class="city-name">Lisboa</h1>
+            <h1 class="city-name" id="current-city">Lisboa</h1>
           </div>
           <div class="col-4">
             <i class="fas fa-light fa-sun icon-weather"></i>
@@ -69,15 +70,19 @@
         </div>
         <div class="row">
           <div class="col-12 current-temp">
-            28
+            <span id="current-temp"> 28</span>
             <span class="temp-unit">
               <a href="#" id="celsius" class="temp-unit">ºC</a> |
               <a href="#" id="fahrenheit" class="temp-unit">ºF</a>
             </span>
           </div>
-          <div class="col-12 extra-data-temp">Humidity: 10%</div>
-          <div class="col-12 extra-data-temp">Wind Speed: 5 km/h</div>
-          <div class="col-12 extra-data-temp">Clear Sky</div>
+          <div class="col-12 extra-data-temp">
+            Humidity: <span id="humidity"> 10</span>%
+          </div>
+          <div class="col-12 extra-data-temp">
+            Wind:<span id="wind">5</span> km/h
+          </div>
+          <div class="col-12 extra-data-temp" id="description">Clear Sky</div>
         </div>
       </div>
     </div>

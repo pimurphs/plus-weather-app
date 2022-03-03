@@ -78,6 +78,7 @@ body {
 .extra-data-temp {
   font-size: 13px;
   text-align: right;
+  text-transform: capitalize;
 }
 
 .footer {
