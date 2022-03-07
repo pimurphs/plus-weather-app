@@ -22,6 +22,32 @@ function formatDate(timestamp) {
 
   return `${day}, ${hours}:${minutes}h`;
 }
+//Adding Forecast Multiple Days
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+
+  let forecastHTML = `<div class ="row">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+        <div class="col-2">
+          <div class="weather-forecast-date">
+          ${day}
+          </div>
+          <img src="http://openweathermap.org/img/wn/10n@2x.png" alt="" width="60">
+          <div class="weather-forecast-temperature">
+            <span class="weather-forecast-max">18º</span>
+            <span class="weather-forecast-min">12º</span>
+          </div>
+        </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 
 //Change Container Current Temp
 function displayTemperature(response) {
@@ -94,3 +120,6 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 // Call City at Load
 search("Lisbon");
+
+//Call for displayForecast function
+displayForecast();
