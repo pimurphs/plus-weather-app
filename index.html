@@ -37,20 +37,23 @@
               </button>
             </div>
           </div>
-          <div class="col-11">
+          <div class="col-9">
             <div class="enter-city-bar">
-              <form id="search-bar">
+              <form id="search-form">
                 <div class="form-group">
                   <input
                     class="searchbar"
                     type="search"
-                    placeholder="Search by City"
+                    placeholder="Type a City"
                     autocomplete="off"
                     id="city-input"
                   />
+                  </form>
+                  </div>
                 </div>
-              </form>
             </div>
+            <div class="col-2">
+                    <input type="Submit" value="Search" class="btn btn search-button" />
           </div>
         </div>
       </div>
@@ -59,11 +62,11 @@
           <div class="col-12">
             <p class="current-time" style="display: inline">Last updated:</p>
             <span class="current-time" id="date-time" style="display: inline"
-              >Tuesday 12 March 10.45</span
+              ></span
             >
           </div>
           <div class="col-8">
-            <h1 class="city-name" id="current-city">Lisboa</h1>
+            <h1 class="city-name" id="current-city"></h1>
           </div>
           <div class="col-4">
             <img src="" alt="" class="icon-weather" id="icon" />
@@ -72,7 +75,7 @@
         </div>
         <div class="row">
           <div class="col-12 current-temp">
-            <span id="current-temp"> 28</span>
+            <span id="current-temp"></span>
             <span class="temp-unit">
               <a href="#" id="celsius" class="temp-unit">ºC</a> |
               <a href="#" id="fahrenheit" class="temp-unit">ºF</a>
