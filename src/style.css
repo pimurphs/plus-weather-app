@@ -34,8 +34,6 @@ body {
 }
 
 .icon-location {
-  position: relative;
-  right: 25px;
   background: none;
   font-size: 17px;
 }
@@ -109,4 +107,23 @@ body {
 
 .source-link:hover {
   color: rgb(243, 248, 179);
+}
+
+.weather-forecast {
+  text-align: center;
+  padding: 30px;
+  border-radius: 7px;
+  margin: 20px auto;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.weather-forecast-date {
+  font-size: 14px;
+  opacity: 0.6;
+}
+.weather-forecast-temperature {
+  font-size: 13px;
+}
+
+.weather-forecast-min {
+  opacity: 0.6;
 }

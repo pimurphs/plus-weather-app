@@ -28,7 +28,7 @@
   </head>
   <body>
     <div class="container weather-app">
-      <div class="container search-bar d-flex justify-content-center">
+      <div class="container search-bar">
         <div class="row search-container">
           <div class="col-9">
             <div class="enter-city-bar">
@@ -41,12 +41,11 @@
                     autocomplete="off"
                     id="city-input"
                   />
-                  </form>
+                  <div class="col-2">
+                    <input type="submit" value="Search" class="btn btn search-button" />
                   </div>
-                </div>
+              </form>
             </div>
-            <div class="col-2">
-                    <input type="Submit" value="Search" class="btn btn search-button" />
           </div>
           <div class="col-1">
             <div class="current-button" id="current-location-button">
@@ -55,10 +54,10 @@
               </button>
             </div>
           </div>
+          </div>
         </div>
-      </div>
-      <div class="container current-weather-container">
-        <div class="row d-flex justify-content-center">
+    <div class="container current-weather-container">
+      <div class="row d-flex justify-content-center">
           <div class="col-12">
             <p class="current-time" style="display: inline">Last updated:</p>
             <span class="current-time" id="date-time" style="display: inline"
@@ -72,7 +71,7 @@
             <img src="" alt="" class="icon-weather" id="icon" />
             <!---<i class="fas fa-light fa-sun icon-weather" id="icon" src=""></i>-->
           </div>
-        </div>
+      </div>
         <div class="row">
           <div class="col-12 current-temp">
             <span id="current-temp"></span>
@@ -88,6 +87,20 @@
             Wind:<span id="wind"></span> km/h
           </div>
           <div class="col-12 extra-data-temp" id="description">Clear Sky</div>
+        </div>
+    </div>
+  </div>
+    <div class="weather-forecast">
+      <div class="row">
+        <div class="col-2">
+          <div class="weather-forecast-date">
+            Thu
+          </div>
+          <img src="http://openweathermap.org/img/wn/10n@2x.png" alt="" width="60">
+          <div class="weather-forecast-temperature">
+            <span class="weather-forecast-max">18º</span>
+            <span class="weather-forecast-min">12º</span>
+          </div>
         </div>
       </div>
     </div>
