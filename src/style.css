@@ -35,10 +35,9 @@ body {
 
 .icon-location {
   position: relative;
-  bottom: 5px;
-  right: 5px;
+  right: 25px;
   background: none;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 .search-button {
@@ -76,9 +75,16 @@ body {
   font-family: "Major Mono Display", monospace;
 }
 
-.temp-unit {
-  color: #000;
+.current-temp .active {
+  color: grey;
+  cursor: default;
   text-decoration: none;
+}
+.current-temp .active:hover {
+  text-decoration: none;
+}
+
+.temp-unit {
   font-size: 15px;
   font-family: "Roboto Mono", monospace;
   transition: all 200ms ease-in-out;

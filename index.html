@@ -30,13 +30,6 @@
     <div class="container weather-app">
       <div class="container search-bar d-flex justify-content-center">
         <div class="row search-container">
-          <div class="col-1">
-            <div class="current-button" id="current-location-button">
-              <button type="button" class="btn btn icon-location">
-                <i class="fas fa-solid fa-location-arrow icon-location"></i>
-              </button>
-            </div>
-          </div>
           <div class="col-9">
             <div class="enter-city-bar">
               <form id="search-form">
@@ -54,6 +47,13 @@
             </div>
             <div class="col-2">
                     <input type="Submit" value="Search" class="btn btn search-button" />
+          </div>
+          <div class="col-1">
+            <div class="current-button" id="current-location-button">
+              <button type="button" class="btn btn icon-location">
+                <i class="fas fa-solid fa-location-arrow icon-location"></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -77,15 +77,15 @@
           <div class="col-12 current-temp">
             <span id="current-temp"></span>
             <span class="temp-unit">
-              <a href="#" id="celsius" class="temp-unit">ºC</a> |
-              <a href="#" id="fahrenheit" class="temp-unit">ºF</a>
+              <a href="#" id="celsius-link" class="temp-unit active">ºC</a> |
+              <a href="#" id="fahrenheit-link" class="temp-unit">ºF</a>
             </span>
           </div>
           <div class="col-12 extra-data-temp">
-            Humidity: <span id="humidity"> 10</span>%
+            Humidity: <span id="humidity"></span>%
           </div>
           <div class="col-12 extra-data-temp">
-            Wind:<span id="wind">5</span> km/h
+            Wind:<span id="wind"></span> km/h
           </div>
           <div class="col-12 extra-data-temp" id="description">Clear Sky</div>
         </div>
