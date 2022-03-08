@@ -23,7 +23,8 @@ function formatDate(timestamp) {
   return `${day}, ${hours}:${minutes}h`;
 }
 //Adding Forecast Multiple Days
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
 
@@ -49,7 +50,16 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
-//Change Container Current Temp
+//Change Container Forecast - API (called in displayTemperature)
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "8cb4b09ce92dcd0f47ea25293231322e";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
+//Change Container Current Temp - API (last Line - call for function getForecast)
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#current-temp");
   let cityElement = document.querySelector("#current-city");
@@ -72,6 +82,8 @@ function displayTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 //Axios API
@@ -120,6 +132,3 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 // Call City at Load
 search("Lisbon");
-
-//Call for displayForecast function
-displayForecast();
