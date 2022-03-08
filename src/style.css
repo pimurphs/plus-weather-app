@@ -26,22 +26,23 @@ body {
 
 .searchbar {
   border-radius: 3px;
-  font-size: 12px;
+  font-size: 15px;
   background: none;
-  width: 400px;
+  width: 500px;
   justify-content: center;
   text-align: center;
 }
 
 .icon-location {
+  position: relative;
+  left: 20px;
   background: none;
   font-size: 17px;
 }
 
 .search-button {
-  position: relative;
-  right: 20px;
-  font-size: 12px;
+  padding: 0 15 0 15;
+  font-size: 15px;
   background-color: rgba(255, 255, 255, 0.3);
 }
 

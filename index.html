@@ -28,11 +28,11 @@
   </head>
   <body>
     <div class="container weather-app">
-      <div class="container search-bar">
-        <div class="row search-container">
-          <div class="col-9">
-            <div class="enter-city-bar">
-              <form id="search-form">
+      <form id="search-form">
+        <div class="container search-bar">
+          <div class="row search-container">
+            <div class="col-9">
+              <div class="enter-city-bar">
                 <div class="form-group">
                   <input
                     class="searchbar"
@@ -41,28 +41,35 @@
                     autocomplete="off"
                     id="city-input"
                   />
-                  <div class="col-2">
-                    <input type="submit" value="Search" class="btn btn search-button" />
-                  </div>
-              </form>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="col-1">
-            <div class="current-button" id="current-location-button">
-              <button type="button" class="btn btn icon-location">
-                <i class="fas fa-solid fa-location-arrow icon-location"></i>
-              </button>
+            <div class="col-1">
+              <input
+                type="submit"
+                value="Search"
+                class="btn btn search-button"
+              />
             </div>
-          </div>
+            <div class="col-1">
+              <div class="current-button" id="current-location-button">
+                <button type="button" class="btn btn icon-location">
+                  <i class="fas fa-solid fa-location-arrow icon-location"></i>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-    <div class="container current-weather-container">
-      <div class="row d-flex justify-content-center">
+      </form>
+      <div class="container current-weather-container">
+        <div class="row d-flex justify-content-center">
           <div class="col-12">
             <p class="current-time" style="display: inline">Last updated:</p>
-            <span class="current-time" id="date-time" style="display: inline"
-              ></span
-            >
+            <span
+              class="current-time"
+              id="date-time"
+              style="display: inline"
+            ></span>
           </div>
           <div class="col-8">
             <h1 class="city-name" id="current-city"></h1>
@@ -71,7 +78,7 @@
             <img src="" alt="" class="icon-weather" id="icon" />
             <!---<i class="fas fa-light fa-sun icon-weather" id="icon" src=""></i>-->
           </div>
-      </div>
+        </div>
         <div class="row">
           <div class="col-12 current-temp">
             <span id="current-temp"></span>
@@ -88,9 +95,8 @@
           </div>
           <div class="col-12 extra-data-temp" id="description">Clear Sky</div>
         </div>
-    </div>
-  </div>
-    <div class="weather-forecast" id="forecast">
+      </div>
+      <div class="weather-forecast" id="forecast"></div>
     </div>
     <footer>
       <p class="footer">

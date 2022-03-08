@@ -25,7 +25,7 @@ function formatDate(timestamp) {
 //Adding Forecast Multiple Days
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Thu", "Fri", "Sat", "Sun"];
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
 
   let forecastHTML = `<div class ="row">`;
 
