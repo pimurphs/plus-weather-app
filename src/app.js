@@ -22,28 +22,46 @@ function formatDate(timestamp) {
 
   return `${day}, ${hours}:${minutes}h`;
 }
+
+//From displayForecast - adding the days of the week (since API only gives timestamps)
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 //Adding Forecast Multiple Days
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
 
   let forecastHTML = `<div class ="row">`;
 
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
         <div class="col-2">
           <div class="weather-forecast-date">
-          ${day}
+          ${formatDay(forecastDay.dt)}
           </div>
-          <img src="http://openweathermap.org/img/wn/10n@2x.png" alt="" width="60">
+          <img src="http://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png" alt="" width="60">
           <div class="weather-forecast-temperature">
-            <span class="weather-forecast-max">18º</span>
-            <span class="weather-forecast-min">12º</span>
+            <span class="weather-forecast-max">${Math.round(
+              forecastDay.temp.max
+            )}º</span>
+            <span class="weather-forecast-min">${Math.round(
+              forecastDay.temp.min
+            )}º</span>
           </div>
         </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
