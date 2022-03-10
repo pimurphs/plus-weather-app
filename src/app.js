@@ -148,5 +148,26 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
+//Current Position Button + Geolocation
+function showPosition(position) {
+  let lat = position.coords.latitude;
+  let long = position.coords.longitude;
+
+  let apiKey = "8cb4b09ce92dcd0f47ea25293231322e";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}&units=metric`;
+
+  axios.get(`${apiUrl}`).then(displayTemperature);
+}
+
+//Navigator Geolocation
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
+
+//Button for current location
+let button = document.querySelector("#current-location");
+button.addEventListener("click", getCurrentLocation);
+
 // Call City at Load
 search("Lisbon");
