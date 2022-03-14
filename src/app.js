@@ -182,8 +182,8 @@ function changingBackground(description) {
     document.body.style.backgroundImage = `linear-gradient(26deg, rgb(236, 122, 248) 0%, rgb(250, 229, 103) 65%);`;
   } else if (description === "rain") {
     document.body.style.backgroundImage = `linear-gradient(26deg, rgb(246, 241, 241) 15%, rgb(104, 100, 116) 95%)`;
-  } else if (description === " light rain") {
-    document.body.style.backgroundImage = `linear-gradient(26deg, rgb(62, 37, 180) 0%, rgb(250, 227, 135) 85%);`;
+  } else if (description === "light rain") {
+    document.body.style.backgroundImage = `linear-gradient(26deg, rgb(62, 37, 180) 0%, rgb(250, 227, 135) 85%)`;
   } else if (description === "thunderstorm") {
     document.body.style.backgroundImage = `linear-gradient(26deg, rgb(41, 16, 161) 0%, rgb(135, 211, 250) 85%)`;
   } else if (description === "snow") {

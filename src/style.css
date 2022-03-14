@@ -140,3 +140,11 @@ body {
 .weather-forecast-min {
   opacity: 0.6;
 }
+
+.weather-mood {
+  display: block;
+  margin: 10 auto;
+  text-align: center;
+  font-family: "Roboto Mono", monospace;
+  font-size: 13px;
+}
