@@ -102,6 +102,7 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
   getForecast(response.data.coord);
+  changingBackground(response.data.weather[0].description);
 }
 
 //Axios API
@@ -165,35 +166,33 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
-function changingBackground(response) {
-  let descriptionElement = response.data.weather[0].description;
-
-  if (descriptionElement === "Clear Sky") {
-    document.body.style.background = `linear-gradient: (26deg, rgb(243, 248, 179) 15%, rgb(115, 235, 252) 97%) `;
-  } else if (descriptionElement === "Scattered Clouds") {
-    document.body.style.background = `linear-gradient: (26deg, rgb(166, 167, 155) 15%, rgb(115, 235, 252) 97%) `;
-  } else if (descriptionElement === "Few Clouds") {
-    document.body.style.background = `linear-gradient: (26deg, rgb(221, 221, 218) 15%, rgb(101, 180, 252) 97%) `;
-  } else if (descriptionElement === "Broken Clouds") {
-    document.body.style.background = `linear-gradient: (26deg, rgb(231, 232, 238) 46%, rgb(45, 128, 211) 100% `;
-  } else if (descriptionElement === "Shower Rain") {
-    document.body.style.background = `linear-gradient: (26deg, rgb(248, 156, 202) 20%, rgb(112, 118, 248) 100%) `;
-  } else if (descriptionElement === "Rain") {
-    document.body.style.background = `linear-gradient: (26deg, rgb(255, 250, 252) 17%, rgb(170, 168, 168) 100%) `;
-  } else if (descriptionElement === "Thunderstorm") {
-    document.body.style.background = `linear-gradient: (26deg, rgb(248, 248, 151) 28%, rgb(238, 183, 15) 80%) `;
-  } else if (descriptionElement === "Snow") {
-    document.body.style.background = `linear-gradient: (26deg, rgb(248, 245, 246) 26%, rgb(35, 231, 250) 86%) `;
-  } else if (descriptionElement === "Mist") {
-    document.body.style.background = `linear-gradient: (26deg, rgb(91, 160, 114) 26%, rgb(242, 246, 246) 75%) `;
+function changingBackground(description) {
+  console.log(description);
+  if (description === "clear sky") {
+    document.body.style.backgroundImage = `linear-gradient(26deg, rgb(243, 248, 179) 15%, rgb(115, 235, 252) 97%)`;
+  } else if (description === "scattered clouds") {
+    document.body.style.backgroundImage = `linear-gradient(26deg, rgb(82, 175, 250) 0%, rgb(255, 133, 195) 79%)`;
+  } else if (description === "few clouds") {
+    document.body.style.backgroundImage = `linear-gradient(26deg, rgb(221, 221, 218) 15%, rgb(101, 180, 252) 97%)`;
+  } else if (description === "broken clouds") {
+    document.body.style.backgroundImage = `linear-gradient(26deg, rgb(253, 253, 7) 0%, rgb(125, 233, 187) 100%)`;
+  } else if (description === "overcast clouds") {
+    document.body.style.backgroundImage = `linear-gradient(26deg, rgb(122, 248, 158) 11%, rgb(113, 49, 253) 100%)`;
+  } else if (description === "shower rain") {
+    document.body.style.backgroundImage = `linear-gradient(26deg, rgb(236, 122, 248) 0%, rgb(250, 229, 103) 65%);`;
+  } else if (description === "rain") {
+    document.body.style.backgroundImage = `linear-gradient(26deg, rgb(246, 241, 241) 15%, rgb(104, 100, 116) 95%)`;
+  } else if (description === " light rain") {
+    document.body.style.backgroundImage = `linear-gradient(26deg, rgb(62, 37, 180) 0%, rgb(250, 227, 135) 85%);`;
+  } else if (description === "thunderstorm") {
+    document.body.style.backgroundImage = `linear-gradient(26deg, rgb(41, 16, 161) 0%, rgb(135, 211, 250) 85%)`;
+  } else if (description === "snow") {
+    document.body.style.backgroundImage = `linear-gradient(26deg, rgb(248, 245, 246) 26%, rgb(35, 231, 250) 100%)`;
+  } else if (description === "mist") {
+    document.body.style.backgroundImage = `linear-gradient(26deg, rgb(113, 228, 124) 0%, rgb(241, 102, 181) 100%)`;
+  } else if (description === "haze") {
+    document.body.style.backgroundImage = `linear-gradient(26deg, rgb(253, 253, 89) 0%, rgb(230, 55, 154) 100%)`;
   }
-}
-
-function getDescription(coordinates) {
-  let apiKey = "8cb4b09ce92dcd0f47ea25293231322e";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${coordinates.long}&appid=${apiKey}&units=metric`;
-
-  axios.get(apiUrl).then(changingBackground);
 }
 
 //Button for current location
