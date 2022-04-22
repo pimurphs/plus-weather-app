@@ -148,3 +148,17 @@ body {
   font-family: "Roboto Mono", monospace;
   font-size: 13px;
 }
+
+@media (max-width: 576px) {
+  .city-name,
+  .current-temp {
+    font-size: 30px;
+  }
+
+  .extra-data-temp,
+  .current-time,
+  .footer,
+  .weather-mood {
+    font-size: 10px;
+  }
+}
